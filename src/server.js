@@ -7,7 +7,8 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ credentials: true, origin: "*" }));
-
+const environmentRouter = require('./router/environmentRouter');
+app.use("/api", environmentRouter);
 
 async function main() {
   try {
